@@ -1,0 +1,29 @@
+<style type="less">
+ 
+</style>
+<template>
+  <text>我是一个组件</text>
+  <counter :text2.sync="text"></counter>
+</template>
+<script>
+  import wepy from 'wepy'
+  import counter from '../components/counter'
+
+
+  export default class Group extends wepy.component {
+    props = {
+      text:{
+        type:String,
+        default:''
+      }
+    }
+    components={
+      'counter':counter
+    }
+    events={
+      'event-btn':function(){
+        console.log('fu')
+      }
+    }
+  }
+</script>

@@ -1,0 +1,33 @@
+<style lang="less">
+
+  
+</style>
+<template>
+  <view>
+    <text @tap="eventBtn">我是第二个组件</text>
+    <text>{{text2}}</text>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import TestMixin from '../mixins/test';
+
+  export default class Counter extends wepy.component {
+    mixins = [TestMixin];
+    props = {
+      text2: {
+        type: String,
+        default: ''
+      }
+    }
+    methods={
+      eventBtn:function(){
+        console.log("zi")
+        this.$emit('event-btn')
+      }
+    }
+    onLoad(){
+      console.log("ok")
+    }
+  }
+</script>

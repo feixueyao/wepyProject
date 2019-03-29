@@ -1,0 +1,44 @@
+<style lang="less">
+
+</style>
+<template>
+  <group :text.sync="textStr"></group>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import 'wepy-async-function'
+  import group from '../components/group'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test'
+    }
+    components = {
+      'group':group
+    }
+
+
+    data = {
+      textStr:'我是来自父组件的数据'
+    }
+
+    computed = {
+ 
+    }
+
+    methods = {
+      
+    }
+
+    events={
+      // 'event-btn':function(){
+      //   console.log('zufu')
+      // }
+    }
+
+    onLoad() {
+
+    }
+  }
+</script>
